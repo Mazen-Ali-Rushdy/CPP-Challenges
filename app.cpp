@@ -1,19 +1,21 @@
 #include <iostream>
+#include <algorithm>
 #include <string>
-#include <vector>
 using namespace std;
 
-std::string boolean_to_string(bool b){
-  //Your code here
-  string result;
-  if (b == 0)
-    result = "false";
-  else
-    result = "true";
-  return result;
+bool isPalindrom (const std::string& str)
+{
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (tolower(str[i]) != tolower(str[str.length() - 1 - i]))
+    {
+      return false;
+    }
+  }
+  return true;
 }
 
 int main () {
-  cout << boolean_to_string(true);
+  cout << isPalindrom("a");
   return 0;
 }
