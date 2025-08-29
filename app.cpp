@@ -4,20 +4,11 @@
 #include <array>
 using namespace std;
 
-std::vector<int> digitize(unsigned long n) 
-{
-  vector<int> arr = {};
-  string st = to_string(n);
-  reverse(st.begin(), st.end());
-  for (int i = 0; i < st.length(); i++)
-  {
-    arr.push_back(st[i] - '0');
-  }
-  return arr;
-  
+int litres(double time) {
+   return time / 2;
 }
 
-
 int main () {
+  cout << litres(2);
   return 0;
 }
