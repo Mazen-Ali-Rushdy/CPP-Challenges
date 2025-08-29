@@ -3,20 +3,20 @@
 #include <vector>
 using namespace std;
 
-unsigned int strCount(const std::string& word, char letter){
-  int count = 0;
-  for (int i = 0; i < word.length(); i++)
+std::vector<int> MonkeyCount(int n) {
+  vector<int> arr = {};
+  for (int i = 1; i <= n; i++)
   {
-    if (word[i] == letter)
-    {
-      count += 1;
-    }
+    arr.push_back(i);
   }
-  return count;
+  return arr;
 }
 
 
 int main () {
-  cout << strCount("Hello", 'o');
+  vector <int> arr = MonkeyCount(9);
+  for (int num : arr) {
+    cout << num << " ";
+  }
   return 0;
 }
