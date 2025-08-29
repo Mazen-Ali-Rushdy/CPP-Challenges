@@ -1,17 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int simpleMultiplication(int a){
-    //Your code
-  if (a % 2 == 0)
-  {
-   return a * 8;
-  } else {
-    return  a * 9;
-  }
+double SakuraFall(double v) {
+     return v <= 0 ? 0 : 400 / v;
 }
-
 int main () {
-  cout << simpleMultiplication(2);
+  cout << SakuraFall(5);
   return 0;
 }
