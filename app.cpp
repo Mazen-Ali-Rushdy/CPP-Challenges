@@ -4,21 +4,20 @@
 #include <array>
 using namespace std;
 
-vector<int> reverseSeq(int n) {
-  vector<int> arr = {};
-  for (int i = n; i >= 1; i--)
+int grow(std::vector<int> nums) {
+  // your code here
+  int result = 1;
+  for (int i : nums)
   {
-    arr.push_back(i);
+    result *= i;
   }
-  return arr;
+  return result;
 }
 
 
 int main () {
-  vector <int> nums = reverseSeq(6);
+  vector <int> nums = {1, 2, 3};
 
-  for (int num : nums) {
-    cout << num << "\t";
-  }
+  cout << grow(nums);
   return 0;
 }
