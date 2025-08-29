@@ -1,23 +1,22 @@
 #include <iostream>
-#include <vector>
+#include <string>
 using namespace std;
 
-string doubles(string s){
-  string result = ""; // 
-    for (char ch : s)
+std::string removeExclamationMarks(std::string str){
+  //your code here
+  std::string clean = "";
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (str[i] != '!')
     {
-      if (ch == result.back())
-      {
-        result.pop_back();
-      }
-      else
-      {
-        result.push_back(ch);
-      }
+      clean += str[i];
     }
-  return result;
+  }
+  return clean;
+  
 }
+
 int main () {
-  cout << doubles("abbbzz");
+  cout << removeExclamationMarks("Hello World!");
   return 0;
 }
