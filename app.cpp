@@ -1,22 +1,17 @@
 #include <iostream>
 using namespace std;
 
-std::string to_alternating_case(const std::string& str)
-{
-  std::string result = "";
-  for (int i = 0; i < str.length(); i++)
+int simpleMultiplication(int a){
+    //Your code
+  if (a % 2 == 0)
   {
-    if (isupper(str[i]))
-      result += tolower(str[i]);
-    else if (islower(str[i]))
-      result += toupper(str[i]);
-    else
-      result += str[i];
+   return a * 8;
+  } else {
+    return  a * 9;
   }
-  return result;
 }
 
 int main () {
-  cout << to_alternating_case("hello world");
+  cout << simpleMultiplication(2);
   return 0;
 }
