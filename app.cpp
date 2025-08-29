@@ -4,20 +4,18 @@
 #include <array>
 using namespace std;
 
-int grow(std::vector<int> nums) {
-  // your code here
-  int result = 1;
-  for (int i : nums)
+std::string makeUpperCase (const std::string& input_str)
+{
+  std::string result = "";
+  for (char c : input_str)
   {
-    result *= i;
+    result += toupper(c);
   }
   return result;
 }
 
 
 int main () {
-  vector <int> nums = {1, 2, 3};
-
-  cout << grow(nums);
+cout <<  makeUpperCase("hello");
   return 0;
 }
