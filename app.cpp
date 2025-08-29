@@ -3,25 +3,23 @@
 #include <vector>
 using namespace std;
 
-vector<int> invert(vector<int> values)
+vector<int> divisible_by(vector<int> numbers, int divisor)
 {
-  for (int& inv : values)
-  {
-    inv *= -1;
-  }
-  return values;
+  vector<int> result = {};
+    for (int i : numbers)
+    {
+      if (i % divisor == 0)
+        result.push_back(i);
+    }
+  return result;
 }
-
 int main () {
-  vector <int> arr = {1, 2, 3, 4, 5};
+  vector <int> vec {1, 2, 3, 4, 5, 6};
+  vector <int> divisible_vec = divisible_by(vec, 2);
 
-  invert(arr);
-
-  vector<int> inverted_arr = invert(arr);
-  
-   for (int num : inverted_arr) // استخدم حلقة لطباعة كل عنصر على حدة
+  for (int i : divisible_vec)
   {
-    cout << num << " ";
+      cout << i << " ";
   }
   return 0;
 }
