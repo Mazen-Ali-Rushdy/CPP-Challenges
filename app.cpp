@@ -1,24 +1,21 @@
 #include <iostream>
-#include <string>
+#include <vector>
 using namespace std;
 
-std::string correct(std::string str){
-  //your code here
-  std::string result = "";
-  for (char c : str)
+int sum(std::vector<int> nums) {
+  int result = 0;
+  if (nums.size() != 0)
   {
-    if (c == '5')
-      result += 'S';
-    else if (c == '0')
-      result += 'O';
-    else if (c == '1')
-      result += 'I';
-    else 
-      result += c;
+    for (int num : nums)
+    {
+      result += num;
+    }
   }
+  else return {};
   return result;
 }
 int main () {
-  cout << correct("1F-RUDYARD K1PL1NG");
+  vector<int> arr = {1, 2, 4};
+  cout << sum(arr);
   return 0;
 }
