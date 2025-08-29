@@ -2,33 +2,23 @@
 #include <string>
 using namespace std;
 
-std::string switch_it_up(int number){
-  
-  switch (number)
+std::string correct(std::string str){
+  //your code here
+  std::string result = "";
+  for (char c : str)
   {
-      case 0:
-      return "Zero";
-      case 1:
-      return "One";
-       case 2:
-      return "Two";
-       case 3:
-      return "Three";
-       case 4:
-      return "Four";
-      case 5:
-      return "Five";
-      case 6:
-      return "Six";
-      case 7:
-      return "Seven";
-      case 8:
-      return "Eight";
-      case 9:
-      return "Nine";
+    if (c == '5')
+      result += 'S';
+    else if (c == '0')
+      result += 'O';
+    else if (c == '1')
+      result += 'I';
+    else 
+      result += c;
   }
+  return result;
 }
 int main () {
-  cout << switch_it_up(1);
+  cout << correct("1F-RUDYARD K1PL1NG");
   return 0;
 }
