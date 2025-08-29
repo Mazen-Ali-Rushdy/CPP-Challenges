@@ -5,33 +5,19 @@
 #include <array>
 using namespace std;
 
-vector<int> countPositivesSumNegatives(std::vector<int> input)
+string twoSort(vector<string> s)
 {
-  int count = 0;
-  int sum_negs = 0;
-
-
-    if (input.empty()) {
-      return {};
-    }
-  
-  for (int num : input) {
-    if (num > 0) 
-      count += 1;
-    else if (num < 0)
-      sum_negs += num;
-      
+  sort(s.begin(), s.end());
+  string result = s[0];
+  for (int i = 1; i < result.length(); i += 4)
+  {
+    result.insert(i, "***");
   }
-  
-  return {count, sum_negs};
+  return result;
 }
 
 int main () {
-  vector <int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15};
-
-  vector <int> result = countPositivesSumNegatives(nums);
-
-
-  cout << "{" << result.front() << ", " << result.back() << "}";
+  vector <string> words { "bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps" };
+  cout << twoSort(words);
   return 0;
 }
