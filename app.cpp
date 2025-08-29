@@ -4,17 +4,21 @@
 #include <array>
 using namespace std;
 
-std::string DNAtoRNA(std::string dna){
- for (int i = 0; i < dna.length(); i++)
+vector<int> reverseSeq(int n) {
+  vector<int> arr = {};
+  for (int i = n; i >= 1; i--)
   {
-   if (dna[i] == 'T')
-     dna[i] = 'U';
- }
-  return dna;
+    arr.push_back(i);
+  }
+  return arr;
 }
 
 
 int main () {
-  cout << DNAtoRNA("GCAT");
+  vector <int> nums = reverseSeq(6);
+
+  for (int num : nums) {
+    cout << num << "\t";
+  }
   return 0;
 }
