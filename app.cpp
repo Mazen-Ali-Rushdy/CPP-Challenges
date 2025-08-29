@@ -5,19 +5,25 @@
 #include <array>
 using namespace std;
 
-string twoSort(vector<string> s)
-{
-  sort(s.begin(), s.end());
-  string result = s[0];
-  for (int i = 1; i < result.length(); i += 4)
-  {
-    result.insert(i, "***");
+unsigned int most_frequent_item_count(const std::vector<int>& collection) {
+  int count = 0;
+  int result = 0;
+  for (int num : collection) {
+    for (int n : collection) {
+      if (num == n) {
+        count++;
+      }
+    }
+    if (count > result) {
+      result = count;
+    }
+    count = 0;
   }
   return result;
 }
 
 int main () {
-  vector <string> words { "bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps" };
-  cout << twoSort(words);
+  vector <int> values {3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3};
+  cout << most_frequent_item_count(values);
   return 0;
 }
