@@ -1,16 +1,24 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include <array>
 using namespace std;
 
-bool zero_fuel(uint32_t distance_to_pump, uint32_t mpg, uint32_t fuel_left)
-{
- return fuel_left * mpg >= distance_to_pump ? true : false;
-    
+using namespace std;
+string solve(string s, int first_index, int last_index){
+  if (last_index < s.length())
+  {
+    reverse(s.begin() + first_index, s.begin() + last_index + 1);
+  }
+  else
+  {
+    reverse(s.begin() + first_index, s.end());
+  }
+  return s;
 }
 
 int main () {
-  cout << zero_fuel(50, 25, 2);
+  cout << solve("codewars",1,5);
   return 0;
 }
