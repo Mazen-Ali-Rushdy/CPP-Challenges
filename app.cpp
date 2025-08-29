@@ -3,21 +3,18 @@
 #include <vector>
 using namespace std;
 
-vector<int> divisible_by(vector<int> numbers, int divisor)
-{
-  vector<int> result = {};
-    for (int i : numbers)
-    {
-      if (i % divisor == 0)
-        result.push_back(i);
-    }
-  return result;
-}
+vector<int> between(int start, int end) {
+  vector<int> nums;
+  for (int i = start; i <= end; i++)
+  {
+    nums.push_back(i);
+  }
+  return nums;
+}  
 int main () {
-  vector <int> vec {1, 2, 3, 4, 5, 6};
-  vector <int> divisible_vec = divisible_by(vec, 2);
+  vector <int> nums = between(1, 4);
 
-  for (int i : divisible_vec)
+  for (int i : nums)
   {
       cout << i << " ";
   }
