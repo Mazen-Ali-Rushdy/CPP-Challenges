@@ -4,21 +4,22 @@
 #include <array>
 using namespace std;
 
-int solve(vector<string> v){
-  int result = 0;
-  for (string str : v)
+int quarter_of(int month){
+  if (month >= 1 && month <= 12)
   {
-    if (isdigit(str[0]))
-    {
-      (stoi(str) % 2 == 0) ? result++ : result--;
-    }
+    if (month <= 3)
+      return 1;
+    else if (month <= 6)
+      return 2;
+    else if (month <= 9)
+      return 3;
+    else
+      return 4;
   }
-  return result;
 }
 
 int main () {
-  vector <string> vec = {"0","1","2","3","a","b"};
-
-  cout << solve(vec);
+  
+  cout << quarter_of(1);
   return 0;
 }
