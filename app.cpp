@@ -4,11 +4,18 @@
 #include <array>
 using namespace std;
 
-int litres(double time) {
-   return time / 2;
+int square_sum(const std::vector<int>& numbers)
+{
+    int sum = 0;
+    for (int i = 0; i < numbers.size(); i++)
+    {
+      sum += numbers[i] * numbers[i];
+    }
+  return sum;
 }
 
 int main () {
-  cout << litres(2);
+  vector <int> nums {1, 2};
+  cout << square_sum(nums);
   return 0;
 }
