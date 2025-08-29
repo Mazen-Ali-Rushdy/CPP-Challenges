@@ -1,20 +1,15 @@
 using namespace std;
-bool XO(const string& str)
+vector<int> climb(int n)
 {
-  int countX = 0;
-  int countO = 0;
-  for (char ch : str)
+   vector<int> result;
+  
+  while(n > 1)
   {
-    if (ch == 'O' || ch == 'o')
-    {
-      countO += 1;
-    }
-    else if (ch == 'X' || ch == 'x')
-    {
-      countX += 1;
-    }
+    result.insert(result.begin(), n);
+    n = n / 2;
   }
-  return countX == countO;
+  result.insert(result.begin(), n);
+  return result;
 }
 
 int main () {
