@@ -5,17 +5,14 @@
 #include <array>
 using namespace std;
 
-bool betterThanAverage(std::vector<int> classPoints, int yourPoints) {
-  int result = 0;
-  for (int num : classPoints)
-  {
-    result += num;
-  }
-  return (result / classPoints.size()) < yourPoints;
+int final_grade(int exam, int projects){
+   if (exam > 90 || projects > 10) return 100;
+  if (exam > 75 && projects >= 5) return 90;
+  if (exam > 50 && projects >= 2) return 75;
+  return 0;
 }
 
 int main () {
-  vector <int> values {100, 40, 34, 57, 29, 72, 57, 88};
-  cout << betterThanAverage(values, 75);
+  cout << final_grade(100, 12);
   return 0;
 }
