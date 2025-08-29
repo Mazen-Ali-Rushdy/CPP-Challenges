@@ -1,13 +1,23 @@
-#include <iostream>
-
-int summation(int num){
- int sum = 0;
- for (int val = 1; val <= num; ++val)
-   sum += val;
- return sum;
+using namespace std;
+bool XO(const string& str)
+{
+  int countX = 0;
+  int countO = 0;
+  for (char ch : str)
+  {
+    if (ch == 'O' || ch == 'o')
+    {
+      countO += 1;
+    }
+    else if (ch == 'X' || ch == 'x')
+    {
+      countX += 1;
+    }
+  }
+  return countX == countO;
 }
 
-int main() {
+int main () {
   
   return 0;
 }
