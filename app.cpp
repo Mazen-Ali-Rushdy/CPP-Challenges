@@ -3,11 +3,16 @@
 #include <vector>
 using namespace std;
 
-double getVolumeOfCuboid(double length, double width, double height) {
-  return length * width * height;
+int twice_as_old(int dad, int son) {
+  if (dad == (son * 2))
+    return 0;
+  else if (dad > (son * 2))
+    return dad - (son * 2);
+  else
+    return son * 2 - dad;
 }
 
 int main () {
-  cout << getVolumeOfCuboid(2.1, 22.4, 19);
+  cout << twice_as_old(36, 7);
   return 0;
 }
