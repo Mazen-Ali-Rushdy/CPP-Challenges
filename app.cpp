@@ -3,16 +3,20 @@
 #include <vector>
 using namespace std;
 
-int twice_as_old(int dad, int son) {
-  if (dad == (son * 2))
-    return 0;
-  else if (dad > (son * 2))
-    return dad - (son * 2);
-  else
-    return son * 2 - dad;
+unsigned int strCount(const std::string& word, char letter){
+  int count = 0;
+  for (int i = 0; i < word.length(); i++)
+  {
+    if (word[i] == letter)
+    {
+      count += 1;
+    }
+  }
+  return count;
 }
 
+
 int main () {
-  cout << twice_as_old(36, 7);
+  cout << strCount("Hello", 'o');
   return 0;
 }
