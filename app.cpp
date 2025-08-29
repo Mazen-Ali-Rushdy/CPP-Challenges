@@ -5,25 +5,17 @@
 #include <array>
 using namespace std;
 
-unsigned int most_frequent_item_count(const std::vector<int>& collection) {
-  int count = 0;
+bool betterThanAverage(std::vector<int> classPoints, int yourPoints) {
   int result = 0;
-  for (int num : collection) {
-    for (int n : collection) {
-      if (num == n) {
-        count++;
-      }
-    }
-    if (count > result) {
-      result = count;
-    }
-    count = 0;
+  for (int num : classPoints)
+  {
+    result += num;
   }
-  return result;
+  return (result / classPoints.size()) < yourPoints;
 }
 
 int main () {
-  vector <int> values {3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3};
-  cout << most_frequent_item_count(values);
+  vector <int> values {100, 40, 34, 57, 29, 72, 57, 88};
+  cout << betterThanAverage(values, 75);
   return 0;
 }
