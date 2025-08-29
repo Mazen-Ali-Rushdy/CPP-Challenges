@@ -4,18 +4,16 @@
 #include <array>
 using namespace std;
 
-std::string makeUpperCase (const std::string& input_str)
-{
-  std::string result = "";
-  for (char c : input_str)
-  {
-    result += toupper(c);
-  }
-  return result;
+int past(int h, int m, int s) {
+  // your code here
+  int one_sec = 1000;
+  int one_min = 60 * one_sec;
+  int one_hour = 60 * one_min;
+  return (h * one_hour) + (m * one_min) + (s * one_sec);
 }
 
 
 int main () {
-cout <<  makeUpperCase("hello");
+  cout << past(0, 1, 1);
   return 0;
 }
