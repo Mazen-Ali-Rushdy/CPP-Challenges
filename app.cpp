@@ -4,11 +4,21 @@
 #include <array>
 using namespace std;
 
-int string_to_number(const std::string& s) {
-  //your code here
-  return stoi(s);
+int solve(vector<string> v){
+  int result = 0;
+  for (string str : v)
+  {
+    if (isdigit(str[0]))
+    {
+      (stoi(str) % 2 == 0) ? result++ : result--;
+    }
+  }
+  return result;
 }
+
 int main () {
-  cout << string_to_number("123456");
+  vector <string> vec = {"0","1","2","3","a","b"};
+
+  cout << solve(vec);
   return 0;
 }
