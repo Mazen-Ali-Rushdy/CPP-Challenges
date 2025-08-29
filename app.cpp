@@ -4,22 +4,13 @@
 #include <array>
 using namespace std;
 
-int quarter_of(int month){
-  if (month >= 1 && month <= 12)
-  {
-    if (month <= 3)
-      return 1;
-    else if (month <= 6)
-      return 2;
-    else if (month <= 9)
-      return 3;
-    else
-      return 4;
-  }
+bool zero_fuel(uint32_t distance_to_pump, uint32_t mpg, uint32_t fuel_left)
+{
+ return fuel_left * mpg >= distance_to_pump ? true : false;
+    
 }
 
 int main () {
-  
-  cout << quarter_of(1);
+  cout << zero_fuel(50, 25, 2);
   return 0;
 }
