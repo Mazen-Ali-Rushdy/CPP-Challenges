@@ -2,20 +2,22 @@
 #include <vector>
 using namespace std;
 
-int sum(std::vector<int> nums) {
-  int result = 0;
-  if (nums.size() != 0)
-  {
-    for (int num : nums)
+string doubles(string s){
+  string result = ""; // 
+    for (char ch : s)
     {
-      result += num;
+      if (ch == result.back())
+      {
+        result.pop_back();
+      }
+      else
+      {
+        result.push_back(ch);
+      }
     }
-  }
-  else return {};
   return result;
 }
 int main () {
-  vector<int> arr = {1, 2, 4};
-  cout << sum(arr);
+  cout << doubles("abbbzz");
   return 0;
 }
