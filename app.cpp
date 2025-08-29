@@ -1,12 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int move(int position, int roll) {
-  // your code here
-  return position + roll * 2;
+std::string to_alternating_case(const std::string& str)
+{
+  std::string result = "";
+  for (int i = 0; i < str.length(); i++)
+  {
+    if (isupper(str[i]))
+      result += tolower(str[i]);
+    else if (islower(str[i]))
+      result += toupper(str[i]);
+    else
+      result += str[i];
+  }
+  return result;
 }
 
 int main () {
-  move(3, 6);
+  cout << to_alternating_case("hello world");
   return 0;
 }
