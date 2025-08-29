@@ -4,17 +4,17 @@
 #include <array>
 using namespace std;
 
-string countSheep(int number) {
-  string result = "";
-  for (int i = 1; i <= number; i++)
+std::string DNAtoRNA(std::string dna){
+ for (int i = 0; i < dna.length(); i++)
   {
-    result += to_string(i) + " sheep...";
-  }
-  return result;
+   if (dna[i] == 'T')
+     dna[i] = 'U';
+ }
+  return dna;
 }
 
 
 int main () {
-  cout << countSheep(4);
+  cout << DNAtoRNA("GCAT");
   return 0;
 }
