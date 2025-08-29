@@ -1,18 +1,12 @@
+#include <iostream>
 using namespace std;
-vector<int> climb(int n)
-{
-   vector<int> result;
-  
-  while(n > 1)
-  {
-    result.insert(result.begin(), n);
-    n = n / 2;
-  }
-  result.insert(result.begin(), n);
-  return result;
+
+int move(int position, int roll) {
+  // your code here
+  return position + roll * 2;
 }
 
 int main () {
-  
+  move(3, 6);
   return 0;
 }
