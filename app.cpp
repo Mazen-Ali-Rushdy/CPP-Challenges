@@ -1,22 +1,30 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <array>
 using namespace std;
 
-std::vector<int> MonkeyCount(int n) {
-  vector<int> arr = {};
-  for (int i = 1; i <= n; i++)
+#include <array>
+using namespace std;
+int points(const std::array<std::string, 10>& games) {
+  int result = 0;
+  for (int i = 0; i < games.size(); i++)
   {
-    arr.push_back(i);
+    int x = games[i][0] - '0';
+    int y = games[i][2] - '0';
+    if (x < y) result += 0;
+    if (x == y) result += 1;
+    if (x > y) result += 3;
   }
-  return arr;
+  return result;
 }
 
 
 int main () {
-  vector <int> arr = MonkeyCount(9);
-  for (int num : arr) {
-    cout << num << " ";
-  }
+   array<string, 10> football_games = {
+    "3:1", "1:2", "0:0", "4:3", "2:2", 
+    "1:0", "2:1", "0:3", "5:2", "1:1"
+  };
+  cout << points(football_games);
   return 0;
 }
