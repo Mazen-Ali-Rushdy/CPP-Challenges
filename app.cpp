@@ -5,14 +5,20 @@
 #include <array>
 using namespace std;
 
-int final_grade(int exam, int projects){
-   if (exam > 90 || projects > 10) return 100;
-  if (exam > 75 && projects >= 5) return 90;
-  if (exam > 50 && projects >= 2) return 75;
-  return 0;
-}
+
+bool check(const std::vector<std::string>& seq, const std::string& elem) {
+    for (int i = 0; i < seq.size(); i++)
+    {
+      if (seq[i] == elem)
+      {
+        return true;
+      }
+    }
+  return false;
+  }
 
 int main () {
-  cout << final_grade(100, 12);
+  vector <string> nums = {"j", "f", "d", "e"};
+  cout << check(nums, "j");
   return 0;
 }
