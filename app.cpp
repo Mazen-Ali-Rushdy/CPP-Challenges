@@ -4,27 +4,31 @@
 #include <array>
 using namespace std;
 
-#include <array>
-using namespace std;
-int points(const std::array<std::string, 10>& games) {
-  int result = 0;
-  for (int i = 0; i < games.size(); i++)
+vector<string> string_to_array(const string& s) {
+  vector<string> arr = {};
+  string temp = "";
+  for (int i = 0; i < s.length(); i++)
   {
-    int x = games[i][0] - '0';
-    int y = games[i][2] - '0';
-    if (x < y) result += 0;
-    if (x == y) result += 1;
-    if (x > y) result += 3;
+    if(s[i] != ' ')
+    {
+      temp += s[i]; // some value
+    }
+    else
+    {
+      arr.push_back(temp);
+      temp = "";
+    }
   }
-  return result;
+  arr.push_back(temp);
+  return arr;
 }
 
 
 int main () {
-   array<string, 10> football_games = {
-    "3:1", "1:2", "0:0", "4:3", "2:2", 
-    "1:0", "2:1", "0:3", "5:2", "1:1"
-  };
-  cout << points(football_games);
+  vector <string> arr = string_to_array("some value");
+
+  for (string ele : arr) {
+    cout << ele << "\t";
+  }
   return 0;
 }
