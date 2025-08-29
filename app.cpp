@@ -3,20 +3,11 @@
 #include <vector>
 using namespace std;
 
-vector<int> between(int start, int end) {
-  vector<int> nums;
-  for (int i = start; i <= end; i++)
-  {
-    nums.push_back(i);
-  }
-  return nums;
-}  
-int main () {
-  vector <int> nums = between(1, 4);
+double getVolumeOfCuboid(double length, double width, double height) {
+  return length * width * height;
+}
 
-  for (int i : nums)
-  {
-      cout << i << " ";
-  }
+int main () {
+  cout << getVolumeOfCuboid(2.1, 22.4, 19);
   return 0;
 }
