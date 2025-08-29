@@ -1,13 +1,13 @@
-#include <vector>
+#include <iostream>
 
-double calcAverage(const std::vector<int>& values){
-  double sums = 0;
-  int size = values.size();
+int summation(int num){
+ int sum = 0;
+ for (int val = 1; val <= num; ++val)
+   sum += val;
+ return sum;
+}
+
+int main() {
   
-  for (double val : values) {
-    sums += val;
-  }
-  
-  return sums / size;
-  
+  return 0;
 }
