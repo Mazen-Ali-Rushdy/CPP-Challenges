@@ -4,16 +4,20 @@
 #include <array>
 using namespace std;
 
-int past(int h, int m, int s) {
-  // your code here
-  int one_sec = 1000;
-  int one_min = 60 * one_sec;
-  int one_hour = 60 * one_min;
-  return (h * one_hour) + (m * one_min) + (s * one_sec);
+std::vector<int> digitize(unsigned long n) 
+{
+  vector<int> arr = {};
+  string st = to_string(n);
+  reverse(st.begin(), st.end());
+  for (int i = 0; i < st.length(); i++)
+  {
+    arr.push_back(st[i] - '0');
+  }
+  return arr;
+  
 }
 
 
 int main () {
-  cout << past(0, 1, 1);
   return 0;
 }
