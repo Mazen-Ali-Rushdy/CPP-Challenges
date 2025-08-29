@@ -4,31 +4,17 @@
 #include <array>
 using namespace std;
 
-vector<string> string_to_array(const string& s) {
-  vector<string> arr = {};
-  string temp = "";
-  for (int i = 0; i < s.length(); i++)
+string countSheep(int number) {
+  string result = "";
+  for (int i = 1; i <= number; i++)
   {
-    if(s[i] != ' ')
-    {
-      temp += s[i]; // some value
-    }
-    else
-    {
-      arr.push_back(temp);
-      temp = "";
-    }
+    result += to_string(i) + " sheep...";
   }
-  arr.push_back(temp);
-  return arr;
+  return result;
 }
 
 
 int main () {
-  vector <string> arr = string_to_array("some value");
-
-  for (string ele : arr) {
-    cout << ele << "\t";
-  }
+  cout << countSheep(4);
   return 0;
 }
