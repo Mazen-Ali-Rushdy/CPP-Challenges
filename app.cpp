@@ -6,19 +6,14 @@
 using namespace std;
 
 
-bool check(const std::vector<std::string>& seq, const std::string& elem) {
-    for (int i = 0; i < seq.size(); i++)
-    {
-      if (seq[i] == elem)
-      {
-        return true;
-      }
-    }
-  return false;
-  }
+using namespace std;
+string sum_str( string a,  string b) {
+  return to_string(stoi(a == "" ? "0" : a) + stoi(b == "" ? "0" : b));
+}
+
+
 
 int main () {
-  vector <string> nums = {"j", "f", "d", "e"};
-  cout << check(nums, "j");
+  cout << sum_str("4", "5");
   return 0;
 }
