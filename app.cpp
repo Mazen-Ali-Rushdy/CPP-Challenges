@@ -1,21 +1,27 @@
 #include <iostream>
-#include <algorithm>
 #include <string>
+#include <vector>
 using namespace std;
 
-bool isPalindrom (const std::string& str)
+vector<int> invert(vector<int> values)
 {
-  for (int i = 0; i < str.length(); i++)
+  for (int& inv : values)
   {
-    if (tolower(str[i]) != tolower(str[str.length() - 1 - i]))
-    {
-      return false;
-    }
+    inv *= -1;
   }
-  return true;
+  return values;
 }
 
 int main () {
-  cout << isPalindrom("a");
+  vector <int> arr = {1, 2, 3, 4, 5};
+
+  invert(arr);
+
+  vector<int> inverted_arr = invert(arr);
+  
+   for (int num : inverted_arr) // استخدم حلقة لطباعة كل عنصر على حدة
+  {
+    cout << num << " ";
+  }
   return 0;
 }
