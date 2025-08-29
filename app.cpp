@@ -1,19 +1,34 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
-using namespace std; 
-
-string sliceString (string str )
-{
-  // your code is here ... Hope You Enjoy !!
-  string sloution = "";
-  for (int i = 1; i < str.length() - 1; i++)
+std::string switch_it_up(int number){
+  
+  switch (number)
   {
-      sloution += str[i];
+      case 0:
+      return "Zero";
+      case 1:
+      return "One";
+       case 2:
+      return "Two";
+       case 3:
+      return "Three";
+       case 4:
+      return "Four";
+      case 5:
+      return "Five";
+      case 6:
+      return "Six";
+      case 7:
+      return "Seven";
+      case 8:
+      return "Eight";
+      case 9:
+      return "Nine";
   }
-  return sloution; 
 }
 int main () {
-  cout << sliceString("tuna");
+  cout << switch_it_up(1);
   return 0;
 }
