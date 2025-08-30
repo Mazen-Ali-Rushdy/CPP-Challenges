@@ -5,15 +5,18 @@
 #include <array>
 using namespace std;
 
-std::string repeat_str(size_t repeat, const std::string& str) {
-  string result;
-  for (int i = 0; i < repeat; i++) {
-    result += str;
-  }
-  return result;
+#include <string>
+using namespace std;
+string find_screen_height(int width, const string &ratio)
+{
+  int i = ratio.find(":");
+  int wratio = stoi(ratio.substr(0, i));
+  int hratio = stoi(ratio.substr(i + 1));
+  int hight = (width * hratio) / wratio;
+  return to_string(width) + "x" + to_string(hight);
+  
 }
 
 int main () {
-  cout << repeat_str(17, "*");
   return 0;
 }
