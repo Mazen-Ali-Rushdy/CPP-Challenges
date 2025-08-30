@@ -5,25 +5,19 @@
 #include <array>
 using namespace std;
 
-std::string vaporcode(const std::string &str) {
+std::string multi_table(int number)
+{
   string result;
-  
-  
-  for (char c : str) {
-    if (isspace(c)) continue;
-    result += char(toupper(c));
-    result += "  ";
+  for (int i = 1; i <= 10; i++) {
+    result += to_string(i) + " * " + to_string(number) + " = " + to_string(i * number);
+    result += "\n";
   }
-  
   result.pop_back();
-  result.pop_back();
-  
-  
   return result;
 }
 
 
 int main () {
-  cout << vaporcode("Let's go to the movies");
+  cout << multi_table(6);
   return 0;
 }
