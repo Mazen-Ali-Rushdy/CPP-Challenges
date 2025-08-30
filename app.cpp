@@ -5,30 +5,18 @@
 #include <array>
 using namespace std;
 
-std::string solve(string s){
-  string str_reverse;
-  string result;
-  int count = 0;
-  
-  for (char c : s) {
-    if (isspace(c)) continue;
-    else {
-      str_reverse = c + str_reverse;
-    }
-  } // edocruo
-  
-  for (char c : s) {
-    if (isspace(c)) {
-      result += ' ';
-    }
-    else 
-    {
-      result += str_reverse[count++];
-    }
+using namespace std;
+long elementsSum(const vector<vector<int>>& arr, int d = 0){
+  int result = 0;
+  int index = arr.size() - 1;
+  for (int i = 0; i < arr.size(); i++)
+  {
+    if (arr[i].size() > index) result += arr[i][index];
+    else result += d;
+    index--;
   }
   return result;
 }
-
 
 int main () {
   cout << solve("your code rocks");
