@@ -6,24 +6,24 @@
 using namespace std;
 
 
-bool solution(std::string const &str, std::string const &ending) {
-  int str_idx = str.length() - 1;
-  int ending_idx = ending.length() - 1;
+int elevator_distance(std::vector<int> array) {
   int result = 0;
   
-  if (ending.length() > str.length()) return false;
-  
-  for (int i = 0; i < ending.length(); i++) {
-    if (str[str_idx - i] != ending[ending_idx - i]) {
-      return false;
+  for (int i = 0; i < array.size() - 1; i++) {
+    if (array[i] > array[i + 1]) {
+      result += (array[i] - array[i + 1]);
+    }
+    else {
+      result += (array[i + 1] - array[i]);
     }
   }
-  
-  return true;
-  
+  return result;
 }
 
+
 int main () {
-  cout << solution("abcde", "cde");
+  vector <int> floors {5, 2, 8};
+  
+  cout << elevator_distance(floors);
   return 0;
 }
