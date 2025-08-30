@@ -5,18 +5,25 @@
 #include <array>
 using namespace std;
 
-#include <string>
-using namespace std;
-string find_screen_height(int width, const string &ratio)
-{
-  int i = ratio.find(":");
-  int wratio = stoi(ratio.substr(0, i));
-  int hratio = stoi(ratio.substr(i + 1));
-  int hight = (width * hratio) / wratio;
-  return to_string(width) + "x" + to_string(hight);
+std::string vaporcode(const std::string &str) {
+  string result;
   
+  
+  for (char c : str) {
+    if (isspace(c)) continue;
+    result += char(toupper(c));
+    result += "  ";
+  }
+  
+  result.pop_back();
+  result.pop_back();
+  
+  
+  return result;
 }
 
+
 int main () {
+  cout << vaporcode("Let's go to the movies");
   return 0;
 }
