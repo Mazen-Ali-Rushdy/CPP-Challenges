@@ -5,19 +5,32 @@
 #include <array>
 using namespace std;
 
-std::string multi_table(int number)
-{
+std::string solve(string s){
+  string str_reverse;
   string result;
-  for (int i = 1; i <= 10; i++) {
-    result += to_string(i) + " * " + to_string(number) + " = " + to_string(i * number);
-    result += "\n";
+  int count = 0;
+  
+  for (char c : s) {
+    if (isspace(c)) continue;
+    else {
+      str_reverse = c + str_reverse;
+    }
+  } // edocruo
+  
+  for (char c : s) {
+    if (isspace(c)) {
+      result += ' ';
+    }
+    else 
+    {
+      result += str_reverse[count++];
+    }
   }
-  result.pop_back();
   return result;
 }
 
 
 int main () {
-  cout << multi_table(6);
+  cout << solve("your code rocks");
   return 0;
 }
