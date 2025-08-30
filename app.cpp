@@ -6,24 +6,31 @@
 using namespace std;
 
 
-int elevator_distance(std::vector<int> array) {
-  int result = 0;
-  
-  for (int i = 0; i < array.size() - 1; i++) {
-    if (array[i] > array[i + 1]) {
-      result += (array[i] - array[i + 1]);
-    }
-    else {
-      result += (array[i + 1] - array[i]);
+std::vector<int> evenNumbers(std::vector<int> arr, int n) {
+  vector <int> new_vec(n);
+  int last_idx = n - 1;
+  if (n == 0) {
+    return {};
+  }
+  for (int i = arr.size() - 1; i >= 0; i--) {
+    if (arr[i] % 2 == 0) {
+      new_vec.at((last_idx)--) = arr[i];
+      if (last_idx < 0) {
+        break;
+      }
     }
   }
-  return result;
+  
+  return new_vec;
 }
 
-
 int main () {
-  vector <int> floors {5, 2, 8};
+  vector <int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+  vector <int> result = evenNumbers(nums, 3);
+
+  for (int num : result) {
+    cout << num << "\t";
+  }
   
-  cout << elevator_distance(floors);
   return 0;
 }
